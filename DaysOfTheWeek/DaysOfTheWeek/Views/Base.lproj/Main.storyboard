@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OAU-F9-H9x">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Day List Table View Controller-->
+        <scene sceneID="m4r-ZT-oJ4">
+            <objects>
+                <tableViewController id="l6h-0V-u7x" customClass="DayListTableViewController" customModule="DaysOfTheWeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="maY-U1-TxV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayCell" id="mat-aT-UQM">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mat-aT-UQM" id="7fO-Ao-Wwl">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="lGp-ps-fGU" kind="show" identifier="toDetailVC" id="y7g-UU-4vU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="l6h-0V-u7x" id="jxW-A8-NSc"/>
+                            <outlet property="delegate" destination="l6h-0V-u7x" id="pev-iV-TFf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HX1-CY-moL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3F-lO-2jc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="94"/>
+        </scene>
+        <!--Day Detail View Controller-->
+        <scene sceneID="uhk-hK-Eg9">
+            <objects>
+                <viewController id="lGp-ps-fGU" customClass="DayDetailViewController" customModule="DaysOfTheWeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8YO-n4-uir">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dE3-v9-mfQ">
+                                <rect key="frame" x="16" y="104" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Origin)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTq-9G-uKK">
+                                <rect key="frame" x="16" y="141" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="39m-hd-7ws"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VTq-9G-uKK" firstAttribute="leading" secondItem="39m-hd-7ws" secondAttribute="leading" constant="16" id="0eO-Q2-46w"/>
+                            <constraint firstItem="dE3-v9-mfQ" firstAttribute="leading" secondItem="39m-hd-7ws" secondAttribute="leading" constant="16" id="31g-yK-aMq"/>
+                            <constraint firstItem="VTq-9G-uKK" firstAttribute="top" secondItem="dE3-v9-mfQ" secondAttribute="bottom" constant="16" id="SuC-w6-g9R"/>
+                            <constraint firstItem="dE3-v9-mfQ" firstAttribute="top" secondItem="39m-hd-7ws" secondAttribute="top" constant="16" id="TMq-jA-wFe"/>
+                            <constraint firstItem="39m-hd-7ws" firstAttribute="trailing" secondItem="dE3-v9-mfQ" secondAttribute="trailing" constant="16" id="Vbv-zz-efm"/>
+                            <constraint firstItem="39m-hd-7ws" firstAttribute="trailing" secondItem="VTq-9G-uKK" secondAttribute="trailing" constant="16" id="hl3-6s-39Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AbS-Os-fYh"/>
+                    <connections>
+                        <outlet property="dayNameLabel" destination="dE3-v9-mfQ" id="8qH-lJ-08u"/>
+                        <outlet property="dayOriginLabel" destination="VTq-9G-uKK" id="AkG-Mp-PRn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QpF-02-6y3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="94"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JUh-Sz-4zz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OAU-F9-H9x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xAe-iw-iid">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="l6h-0V-u7x" kind="relationship" relationship="rootViewController" id="NlN-76-ZJo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTe-ci-jeR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-619" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
